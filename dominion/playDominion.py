@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Oct 13 15:42:42 2015
-
 @author: tfleck
 """
 
@@ -85,8 +84,8 @@ for name in player_names:
 #Play the game
 turn  = 0
 while not Dominion.gameover(supply):
-    turn += 1    
-    print("\r")    
+    turn += 1
+    print("\r")
     for value in supply_order:
         print (value)
         for stack in supply_order[value]:
@@ -95,12 +94,12 @@ while not Dominion.gameover(supply):
     print("\r")
     for player in players:
         print (player.name,player.calcpoints())
-    print ("\rStart of turn " + str(turn))    
+    print ("\rStart of turn " + str(turn))
     for player in players:
         if not Dominion.gameover(supply):
             print("\r")
             player.turn(players,supply,trash)
-            
+
 
 #Final score
 dcs=Dominion.cardsummaries(players)
